@@ -129,7 +129,7 @@ API.prototype.request = function(method, path, opts, cb) {
 
   if (opts.timeout) req.setTimeout(opts.timeout, destroyer(req))
 
-  if (opts.json && opts.json !== true) {
+  if (opts.json && opts.json == true) {
     req.setHeader('Content-Type', 'application/json')
     opts.body = JSON.stringify(opts.json)
   }
